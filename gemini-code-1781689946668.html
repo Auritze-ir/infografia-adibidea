@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baratze Adimentsua - Infografia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap');
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: #f8fafc; 
+        }
+        .image-overlay { 
+            background: linear-gradient(to bottom, transparent 20%, rgba(15, 23, 42, 0.85) 100%); 
+        }
+        .ai-disclaimer { 
+            font-size: 0.65rem; 
+            opacity: 0.7; 
+            color: #64748b;
+        }
+        .img-container { 
+            position: relative; 
+            background-color: #e2e8f0; 
+            height: 100%; 
+            min-height: 384px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        }
+        img { 
+            transition: transform 0.5s ease; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+        .img-container:hover img { 
+            transform: scale(1.05); 
+        }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-12">
+
+    <div class="max-w-5xl mx-auto space-y-16">
+        
+        <div class="space-y-4">
+            <header class="relative h-[500px] rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900">
+                <div class="absolute inset-0 w-full h-full img-container">
+                    <img src="baratze1.png" alt="Baratze Adimentsua">
+                </div>
+                <div class="absolute inset-0 image-overlay flex flex-col justify-end p-8 md:p-12 text-white pointer-events-none">
+                    <span class="bg-green-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase w-fit mb-4 tracking-wider">DOMOTIKA PROIEKTUA</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight">Baratze Adimentsua</h1>
+                    <p class="text-green-300 text-lg md:text-xl mt-2 font-medium">Ureztatze automatizatuaren kontrola</p>
+                </div>
+            </header>
+            <p class="ai-disclaimer px-4 md:px-8">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
+        </div>
+
+        <div class="space-y-12">
+            
+            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
+                <div class="p-8 md:p-12 space-y-4">
+                    <div class="text-green-600 font-black text-5xl opacity-20">01</div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Detekzioa: Hezetasun Maila</h2>
+                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
+                        <strong>Lurzoru-sentsoreak (YL-69)</strong> landarearen inguruko hezetasuna neurtzen du. Lurra lehor dagoenean, sentsoreak erresistentzia handia detektatzen du eta seinale analogikoa bidaltzen dio kontrolagailuari.
+                    </p>
+                </div>
+                <div class="flex flex-col h-full bg-slate-50">
+                    <div class="img-container h-96">
+                        <img src="baratze2.png" alt="Hezetasun sentsorea">
+                    </div>
+                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
+                <div class="flex flex-col h-full bg-slate-50 order-2 md:order-1">
+                    <div class="img-container h-96">
+                        <img src="baratze3.png" alt="Arduino kontrola">
+                    </div>
+                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
+                </div>
+                <div class="p-8 md:p-12 space-y-4 order-1 md:order-2">
+                    <div class="text-green-600 font-black text-5xl opacity-20 text-left">02</div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Logika: Arduino Programazioa</h2>
+                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
+                        <strong>Arduino</strong> plakak sentsorearen datua jaso eta programatutako datuarekin konparatzen du. Hezetasuna %30 baino txikiagoa bada, erreleari agindua ematen dio aktuadorea aktibatzeko.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
+                <div class="p-8 md:p-12 space-y-4">
+                    <div class="text-green-600 font-black text-5xl opacity-20">03</div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Ekintza: Ureztatzea</h2>
+                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
+                        <strong>Ur-ponpa</strong> (Aktuadorea) aktibatzen da. Ura landarera iristen da hezetasun maila egokira iritsi arte. Orduan, sentsoreak datu berria bidali eta sistemak ponpa gelditzen du ura aurreztuz.
+                    </p>
+                </div>
+                <div class="flex flex-col h-full bg-slate-50">
+                    <div class="img-container h-96">
+                        <img src="baratze4.png" alt="Ur ponpa">
+                    </div>
+                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
+                </div>
+            </section>
+        </div>
+
+        <footer class="text-center text-slate-400 py-12 text-sm space-y-4">
+            <div class="h-px bg-slate-200 w-24 mx-auto mb-6"></div>
+            <p class="font-medium">&copy; 2026 Domotika Proiektua - Baratze Adimentsua</p>
+            <div class="flex flex-col items-center space-y-2">
+                <p class="font-semibold text-slate-500 underline underline-offset-4 decoration-green-500 decoration-2">Creative Commons CC0 1.0 Universal</p>
+                <p class="text-xs opacity-75 max-w-lg mx-auto italic leading-relaxed px-4">
+                    Dokumentu hau domeinu publikoan dago. Edonork erabili, kopiatu, aldatu eta banatu dezake mugarik gabe eta baimenik eskatu gabe.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
