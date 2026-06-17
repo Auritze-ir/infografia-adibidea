@@ -4,120 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baratze Adimentsua - Infografia</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap');
-        body { 
-            font-family: 'Outfit', sans-serif; 
-            background-color: #f8fafc; 
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #4caf50;
+            --accent-green: #81c784;
+            --dark-bg: #1e251f;
+            --card-bg: #2c352e;
+            --text-light: #ffffff;
+            --text-muted: #a5d6a7;
         }
-        .image-overlay { 
-            background: linear-gradient(to bottom, transparent 20%, rgba(15, 23, 42, 0.85) 100%); 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .ai-disclaimer { 
-            font-size: 0.65rem; 
-            opacity: 0.7; 
-            color: #64748b;
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .img-container { 
-            position: relative; 
-            background-color: #e2e8f0; 
-            height: 100%; 
-            min-height: 384px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            overflow: hidden; 
+
+        .infografia-container {
+            max-width: 900px;
+            width: 100%;
+            background: linear-gradient(135deg, #152316 0%, #0a0f0a 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        img { 
-            transition: transform 0.5s ease; 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
+
+        /* Hero / Goiburu Atala */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 60px 40px;
+            text-align: left;
+            border-bottom: 4px solid var(--light-green);
         }
-        .img-container:hover img { 
-            transform: scale(1.05); 
+
+        .project-tag {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Pausoen Grid-a */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .step-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px 25px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .step-card:hover {
+            transform: translateY(-50px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Txartel bakoitzaren koloreak jatorrizko fluxurako */
+        .step-card:nth-child(1) { border-top-color: #ff9800; }
+        .step-card:nth-child(2) { border-top-color: #2196f3; }
+        .step-card:nth-child(3) { border-top-color: #4caf50; }
+
+        .step-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            opacity: 0.15;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .step-card h2 {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-card h2 span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--accent-green);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cfd8dc;
+        }
+
+        .step-card p + p {
+            margin-top: 12px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.08);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            margin-top: 15px;
+            color: var(--accent-green);
+        }
+
+        /* Orrialde oina */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive diseinua */
+        @media (max-width: 600px) {
+            .hero-section h1 { font-size: 2.2rem; }
+            .steps-container { padding: 20px; gap: 15px; }
         }
     </style>
 </head>
-<body class="antialiased p-4 md:p-12">
+<body>
 
-    <div class="max-w-5xl mx-auto space-y-16">
-        
-        <div class="space-y-4">
-            <header class="relative h-[500px] rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900">
-                <div class="absolute inset-0 w-full h-full img-container">
-                    <img src="baratze1.png" alt="Baratze Adimentsua">
-                </div>
-                <div class="absolute inset-0 image-overlay flex flex-col justify-end p-8 md:p-12 text-white pointer-events-none">
-                    <span class="bg-green-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase w-fit mb-4 tracking-wider">DOMOTIKA PROIEKTUA</span>
-                    <h1 class="text-4xl md:text-6xl font-black text-white tracking-tight">Baratze Adimentsua</h1>
-                    <p class="text-green-300 text-lg md:text-xl mt-2 font-medium">Ureztatze automatizatuaren kontrola</p>
-                </div>
-            </header>
-            <p class="ai-disclaimer px-4 md:px-8">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
-        </div>
+    <div class="infografia-container">
+        <header class="hero-section">
+            <span class="project-tag">Ochothia Proiektua</span>
+            <h1>Baratze Adimentsua</h1>
+            <p>Ureztatze automatizatuaren kontrola</p>
+        </header>
 
-        <div class="space-y-12">
+        <main class="steps-container">
             
-            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
-                <div class="p-8 md:p-12 space-y-4">
-                    <div class="text-green-600 font-black text-5xl opacity-20">01</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Detekzioa: Hezetasun Maila</h2>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        <strong>Lurzoru-sentsoreak (YL-69)</strong> landarearen inguruko hezetasuna neurtzen du. Lurra lehor dagoenean, sentsoreak erresistentzia handia detektatzen du eta seinale analogikoa bidaltzen dio kontrolagailuari.
-                    </p>
-                </div>
-                <div class="flex flex-col h-full bg-slate-50">
-                    <div class="img-container h-96">
-                        <img src="baratze2.png" alt="Hezetasun sentsorea">
-                    </div>
-                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
-                </div>
-            </section>
+            <article class="step-card">
+                <div class="step-number">01</div>
+                <h2><span>Detekzioa</span>Hezetasun Maila</h2>
+                <p>Lurzoru-sentsoreak (YL-69) landarearen inguruko hezetasuna neurtzen du.</p>
+                <p>Lurra lehor dagoenean, sentsoreak erresistentzia handia detektatzen du eta seinale analogikoa bidaltzen dio kontrolagailuari.</p>
+                <div class="tech-tag">Sentsorea: YL-69</div>
+            </article>
 
-            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
-                <div class="flex flex-col h-full bg-slate-50 order-2 md:order-1">
-                    <div class="img-container h-96">
-                        <img src="baratze3.png" alt="Arduino kontrola">
-                    </div>
-                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
-                </div>
-                <div class="p-8 md:p-12 space-y-4 order-1 md:order-2">
-                    <div class="text-green-600 font-black text-5xl opacity-20 text-left">02</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Logika: Arduino Programazioa</h2>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        <strong>Arduino</strong> plakak sentsorearen datua jaso eta programatutako datuarekin konparatzen du. Hezetasuna %30 baino txikiagoa bada, erreleari agindua ematen dio aktuadorea aktibatzeko.
-                    </p>
-                </div>
-            </section>
+            <article class="step-card">
+                <div class="step-number">02</div>
+                <h2><span>Logika</span>Arduino Programazioa</h2>
+                <p>Arduino plakak sentsorearen datua jaso eta programatutako datuarekin konparatzen du.</p>
+                <p>Hezetasuna 30 baino txikiagoa bada, erreleari agindua ematen dio aktuadorea aktibatzeko.</p>
+                <div class="tech-tag">Kontrolatzailea: Arduino</div>
+            </article>
 
-            <section class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden grid md:grid-cols-2 items-center border border-slate-100">
-                <div class="p-8 md:p-12 space-y-4">
-                    <div class="text-green-600 font-black text-5xl opacity-20">03</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight">Ekintza: Ureztatzea</h2>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        <strong>Ur-ponpa</strong> (Aktuadorea) aktibatzen da. Ura landarera iristen da hezetasun maila egokira iritsi arte. Orduan, sentsoreak datu berria bidali eta sistemak ponpa gelditzen du ura aurreztuz.
-                    </p>
-                </div>
-                <div class="flex flex-col h-full bg-slate-50">
-                    <div class="img-container h-96">
-                        <img src="baratze4.png" alt="Ur ponpa">
-                    </div>
-                    <p class="ai-disclaimer p-3 text-center border-t border-slate-100">Irudi hau Adimen Artifizialaz sortua izan da. CC0 1.0 Universal</p>
-                </div>
-            </section>
-        </div>
+            <article class="step-card">
+                <div class="step-number">03</div>
+                <h2><span>Ekintza</span>Ureztatzea</h2>
+                <p>Ur-ponpa (Aktuadorea) aktibatzen da. Ura landarera iristen da hezetasun maila egokia lortu arte.</p>
+                <p>Orduan, sentsoreak datu berria bidali eta sistemak ponpa gelditzen du ura aurreztuz.</p>
+                <div class="tech-tag">Aktuadorea: Ur-ponpa</div>
+            </article>
 
-        <footer class="text-center text-slate-400 py-12 text-sm space-y-4">
-            <div class="h-px bg-slate-200 w-24 mx-auto mb-6"></div>
-            <p class="font-medium">&copy; 2026 Domotika Proiektua - Baratze Adimentsua</p>
-            <div class="flex flex-col items-center space-y-2">
-                <p class="font-semibold text-slate-500 underline underline-offset-4 decoration-green-500 decoration-2">Creative Commons CC0 1.0 Universal</p>
-                <p class="text-xs opacity-75 max-w-lg mx-auto italic leading-relaxed px-4">
-                    Dokumentu hau domeinu publikoan dago. Edonork erabili, kopiatu, aldatu eta banatu dezake mugarik gabe eta baimenik eskatu gabe.
-                </p>
-            </div>
+        </main>
+
+        <footer class="footer">
+            Creative Commons lizentziapean egina
         </footer>
     </div>
 
